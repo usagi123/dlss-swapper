@@ -73,11 +73,16 @@ public partial class GameControlModel : ObservableObject
 
     public GameControlModelTranslationProperties TranslationProperties { get; } = new GameControlModelTranslationProperties();
 
+    [ObservableProperty]
+    public partial string MfgUnlockStatus { get; set; } = string.Empty;
+
     public GameControlModel(GameControl gameControl, Game game) : base()
     {
         gameControlWeakReference = new WeakReference<GameControl>(gameControl);
         Game = game;
         GameTitle = game.Title;
+
+        _ = RefreshMfgUnlockStatusAsync();
 
 
         // Make sure NVAPIHelper is supported and the game has DLSS.
@@ -592,6 +597,37 @@ public partial class GameControlModel : ObservableObject
         if (gameControlWeakReference.TryGetTarget(out var control))
         {
             await NVAPIHelper.Instance.DisplayNVAPIErrorAsync(control.XamlRoot);
+        }
+    }
+
+    async Task RefreshMfgUnlockStatusAsync()
+    {
+        try
+        {
+            // Looking for an existing install walks the game folder, so keep it off the UI thread.
+            MfgUnlockStatus = await Task.Run(() => MfgUnlockControl.GetSummary(Game));
+        }
+        catch (Exception err)
+        {
+            Logger.Error(err);
+        }
+    }
+
+    [RelayCommand]
+    async Task MfgUnlockAsync()
+    {
+        if (gameControlWeakReference.TryGetTarget(out GameControl? gameControl))
+        {
+            var dialog = new EasyContentDialog(gameControl.XamlRoot)
+            {
+                Title = ResourceHelper.GetFormattedResourceTemplate("MfgUnlock_DialogTitleTemplate", Game.Title),
+                CloseButtonText = ResourceHelper.GetString("General_Close"),
+                DefaultButton = ContentDialogButton.Close,
+                Content = new MfgUnlockControl(Game),
+            };
+            dialog.Resources["ContentDialogMinWidth"] = 700;
+            await dialog.ShowAsync();
+            await RefreshMfgUnlockStatusAsync();
         }
     }
 }
