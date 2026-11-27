@@ -80,4 +80,10 @@ public class GameControlModelTranslationProperties : LocalizedViewModelBase
 
     [TranslationProperty]
     public string NVAPIErrorTooltipText => ResourceHelper.GetString("GamePage_NVAPIError_Tooltip");
+
+    [TranslationProperty]
+    public string MfgUnlockText => ResourceHelper.GetString("MfgUnlock_Title");
+
+    [TranslationProperty]
+    public string MfgUnlockManageText => ResourceHelper.GetString("MfgUnlock_Manage");
 }

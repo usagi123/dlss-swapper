@@ -1359,4 +1359,103 @@ Because of this we recommend using caution for multiplayer games.</value>
   <data name="TranslationToolboxPage_WindowTitle" xml:space="preserve">
     <value>Translation Toolbox</value>
   </data>
+  <data name="MfgUnlock_Title" xml:space="preserve">
+    <value>MFG Unlock (RTX 20/30)</value>
+  </data>
+  <data name="MfgUnlock_Manage" xml:space="preserve">
+    <value>Manage</value>
+  </data>
+  <data name="MfgUnlock_DialogTitleTemplate" xml:space="preserve">
+    <value>MFG Unlock - {0}</value>
+  </data>
+  <data name="MfgUnlock_Warning" xml:space="preserve">
+    <value>Experimental. Enables DLSS Multi Frame Generation on RTX 30 (and untested RTX 20) GPUs using the community RTX30MFG-Unlock mod and Ultimate ASI Loader. Only works in games that already support DLSS Frame Generation. Do not use in online games with anti-cheat.</value>
+  </data>
+  <data name="MfgUnlock_NoFrameGeneration" xml:space="preserve">
+    <value>DLSS Swapper did not find a DLSS Frame Generation DLL in this game. The unlock cannot add Frame Generation to games that do not already have it.</value>
+  </data>
+  <data name="MfgUnlock_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="MfgUnlock_StatusInstalledTemplate" xml:space="preserve">
+    <value>Installed ({0}, loader: {1})</value>
+  </data>
+  <data name="MfgUnlock_StatusNotInstalled" xml:space="preserve">
+    <value>Not installed</value>
+  </data>
+  <data name="MfgUnlock_StatusNoFrameGeneration" xml:space="preserve">
+    <value>Not available (no DLSS Frame Generation found)</value>
+  </data>
+  <data name="MfgUnlock_StatusManual" xml:space="preserve">
+    <value>The unlock files are already in this folder but were not installed by DLSS Swapper. Installing will back them up and take over.</value>
+  </data>
+  <data name="MfgUnlock_GameExecutable" xml:space="preserve">
+    <value>Game executable</value>
+  </data>
+  <data name="MfgUnlock_GameExecutableHelp" xml:space="preserve">
+    <value>The files are placed beside this executable. For Unreal Engine games this is usually the *-Win64-Shipping.exe file, not the launcher in the root folder.</value>
+  </data>
+  <data name="MfgUnlock_Browse" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="MfgUnlock_LoaderName" xml:space="preserve">
+    <value>ASI Loader file name</value>
+  </data>
+  <data name="MfgUnlock_LoaderAutomatic" xml:space="preserve">
+    <value>Automatic</value>
+  </data>
+  <data name="MfgUnlock_Install" xml:space="preserve">
+    <value>Install</value>
+  </data>
+  <data name="MfgUnlock_Update" xml:space="preserve">
+    <value>Update / Reinstall</value>
+  </data>
+  <data name="MfgUnlock_Uninstall" xml:space="preserve">
+    <value>Uninstall</value>
+  </data>
+  <data name="MfgUnlock_OpenFolder" xml:space="preserve">
+    <value>Open folder</value>
+  </data>
+  <data name="MfgUnlock_Mode" xml:space="preserve">
+    <value>Frame generation mode</value>
+  </data>
+  <data name="MfgUnlock_ModeFollowGame" xml:space="preserve">
+    <value>Follow game</value>
+  </data>
+  <data name="MfgUnlock_ModeFixedTemplate" xml:space="preserve">
+    <value>Fixed {0}X</value>
+  </data>
+  <data name="MfgUnlock_ModeDynamic" xml:space="preserve">
+    <value>Dynamic</value>
+  </data>
+  <data name="MfgUnlock_DynamicTarget" xml:space="preserve">
+    <value>Dynamic target frame rate (0 = automatic)</value>
+  </data>
+  <data name="MfgUnlock_SaveMode" xml:space="preserve">
+    <value>Save mode</value>
+  </data>
+  <data name="MfgUnlock_ModeSavedTemplate" xml:space="preserve">
+    <value>Saved: {0}. Changes apply immediately, even while the game is running. If the image freezes above 2X, set Frame Generation to Preset B in the NVIDIA App.</value>
+  </data>
+  <data name="MfgUnlock_SafeMaximumUnknown" xml:space="preserve">
+    <value>Run the game once with Frame Generation enabled to see the highest multiplier it supports.</value>
+  </data>
+  <data name="MfgUnlock_SafeMaximumTemplate" xml:space="preserve">
+    <value>On its last run this game reported a maximum of {0}X. Higher choices are limited to that.</value>
+  </data>
+  <data name="MfgUnlock_Installing" xml:space="preserve">
+    <value>Installing...</value>
+  </data>
+  <data name="MfgUnlock_InstallDone" xml:space="preserve">
+    <value>Done. Start the game and enable DLSS Frame Generation in its settings.</value>
+  </data>
+  <data name="MfgUnlock_UninstallDone" xml:space="preserve">
+    <value>MFG unlock removed.</value>
+  </data>
+  <data name="MfgUnlock_PickExecutable" xml:space="preserve">
+    <value>Pick the game's executable first.</value>
+  </data>
+  <data name="MfgUnlock_AccessDenied" xml:space="preserve">
+    <value>Windows denied access to the game folder. Run DLSS Swapper as administrator and try again.</value>
+  </data>
 </root>
